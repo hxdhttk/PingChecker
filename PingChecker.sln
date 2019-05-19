@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingChecker", "PingChecker\PingChecker.csproj", "{DDCE2EB8-6E2E-4E0A-AE25-5D7EC866AE02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDCE2EB8-6E2E-4E0A-AE25-5D7EC866AE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCE2EB8-6E2E-4E0A-AE25-5D7EC866AE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCE2EB8-6E2E-4E0A-AE25-5D7EC866AE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCE2EB8-6E2E-4E0A-AE25-5D7EC866AE02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D5FB8E5-B197-49C4-A63B-B81868124E41}
+	EndGlobalSection
+EndGlobal
