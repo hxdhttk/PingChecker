@@ -17,7 +17,7 @@ namespace PingChecker
 
             var requestCount = 0;
             var goodResponseCount = 0;
-            var googResponseTotalDelay = 0L;
+            var goodResponseTotalDelay = 0L;
             var goodResponseAvgDelay = 0L;
             var badResponseCount = 0;
 
@@ -28,8 +28,8 @@ namespace PingChecker
                 if (ok)
                 {
                     goodResponseCount += 1;
-                    googResponseTotalDelay += delay;
-                    goodResponseAvgDelay = googResponseTotalDelay / goodResponseCount;
+                    goodResponseTotalDelay += delay;
+                    goodResponseAvgDelay = goodResponseTotalDelay / goodResponseCount;
                 }
                 else
                 {
