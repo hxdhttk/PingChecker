@@ -17,38 +17,38 @@ namespace PingChecker
 
             var requestCount = 0;
             var goodResponseCount = 0;
-            var goodResponseTotalDelay = 0L;
-            var goodResponseAvgDelay = 0L;
+            var goodResponseTotalLatency = 0L;
+            var goodResponseAvgLatency = 0L;
             var badResponseCount = 0;
 
-            await foreach (var (ok, delay) in Check(addr, interval))
+            await foreach (var (ok, latency) in Check(addr, interval))
             {
                 requestCount += 1;
 
                 if (ok)
                 {
                     goodResponseCount += 1;
-                    goodResponseTotalDelay += delay;
-                    goodResponseAvgDelay = goodResponseTotalDelay / goodResponseCount;
+                    goodResponseTotalLatency += latency;
+                    goodResponseAvgLatency = goodResponseTotalLatency / goodResponseCount;
                 }
                 else
                 {
                     badResponseCount += 1;
                 }
 
-                Console.Write($"Bad response/Total response: {badResponseCount}/{requestCount}, Rate: {100 * (double)badResponseCount / requestCount:F2}%, Avg delay: {goodResponseAvgDelay}\r");
+                Console.Write($"Bad/Total responses: {badResponseCount}/{requestCount}, Rate: {100 * (double)badResponseCount / requestCount:F2}%, Avg latency: {goodResponseAvgLatency}\r");
             }
         }
 
-        public static async IAsyncEnumerable<(bool ok, long delay)> Check(string addr, int interval)
+        public static async IAsyncEnumerable<(bool ok, long latency)> Check(string addr, int interval)
         {
             var sender = new Ping();
             var pingOptions = new PingOptions() { DontFragment = true };
 
             const string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            var buffer = Encoding.ASCII.GetBytes(data);
+            var buffer = Encoding.ASCII.GetBytes(data);   
 
-            const int timeout = 120;
+            const int timeout = 120;         
 
             while (true)
             {
